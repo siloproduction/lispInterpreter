@@ -2,6 +2,7 @@
 #define OBJECT_H
 
 enum ObjectType {
+    DOUBLET,
     NIL,
     NUMBER,
     STRING
