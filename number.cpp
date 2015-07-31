@@ -7,6 +7,7 @@ using namespace std;
 
 Number::Number(double numberValue) {
     value = numberValue;
+    objectType = NUMBER;
 }
 
 Number::~Number() {}

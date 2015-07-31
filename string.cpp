@@ -7,6 +7,7 @@ using namespace std;
 
 String::String(std::string stringValue) {
     value = stringValue;
+    objectType = STRING;
 }
 
 String::~String() {}

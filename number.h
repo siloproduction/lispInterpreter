@@ -5,12 +5,14 @@
 
 class Number: public Object {
     public:
-        double value;
-
         Number(double numberValue);
         virtual ~Number();
 
         virtual void print() const;
+
+    private:
+        double value;
+        ObjectType objectType;
 };
 
 #endif // NUMBER_H

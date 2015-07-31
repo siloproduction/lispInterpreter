@@ -1,6 +1,12 @@
 #ifndef OBJECT_H
 #define OBJECT_H
 
+enum ObjectType {
+    NIL,
+    NUMBER,
+    STRING
+};
+
 class Object {
     public:
         Object();

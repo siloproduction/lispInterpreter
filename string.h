@@ -7,12 +7,14 @@
 
 class String: public Object {
     public:
-        std::string value;
-
         String(std::string stringValue);
         virtual ~String();
 
         virtual void print() const;
+
+    private:
+        std::string value;
+        ObjectType objectType;
 };
 
 #endif // STRING_H
