@@ -14,7 +14,7 @@ class Object {
         Object();
         virtual ~Object();
 
-        virtual void print() const;
+        virtual ObjectType getObjectType() const = 0;
 };
 
 #endif //OBJECT_H

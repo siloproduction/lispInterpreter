@@ -8,7 +8,8 @@ class Number: public Object {
         Number(double numberValue);
         virtual ~Number();
 
-        virtual void print() const;
+        virtual ObjectType getObjectType() const;
+        double getValue();
 
     private:
         double value;

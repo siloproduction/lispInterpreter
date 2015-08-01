@@ -7,14 +7,16 @@
 
 using namespace std;
 
+
 class SymbolsList {
     public:
-        vector<Object*> symbols;
-
         SymbolsList();
         ~SymbolsList();
 
         void push(Object * object);
+
+    private:
+        vector<Object*> symbols;
 };
 
 extern SymbolsList symbolsList;

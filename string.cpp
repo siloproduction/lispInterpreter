@@ -5,14 +5,17 @@
 
 using namespace std;
 
-String::String(std::string stringValue) {
+String::String(string stringValue) {
     value = stringValue;
     objectType = STRING;
 }
 
 String::~String() {}
 
-void String::print() const {
-    cout << "value = " << value << endl;
+ObjectType String::getObjectType() const {
+    return objectType;
 }
 
+const string String::getValue() {
+    return value;
+}

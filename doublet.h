@@ -5,12 +5,16 @@
 
 class Doublet: public Object {
     public:
-        Doublet(Object car, Doublet * cdr);
+        Doublet(Object * car, Object * cdr);
         ~Doublet();
 
+        Object * getCar();
+        Object * getCdr();
+        virtual ObjectType getObjectType() const;
+
     private:
-        Object car;
-        Doublet * cdr;
+        Object * car;
+        Object * cdr;
         ObjectType objectType;
 };
 

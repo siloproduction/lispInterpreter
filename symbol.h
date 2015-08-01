@@ -10,10 +10,13 @@ using namespace std;
 
 class Symbol: public Object {
     public:
-        Symbol(string nameValue, Object objectValue);
+        Symbol(string nameValue, Object * objectValue);
         ~Symbol();
 
+        virtual ObjectType getObjectType() const;
         string name;
-        Object object;
+        Object * object;
+    private:
+        ObjectType objectType;
 };
 #endif // SYMBOL_H

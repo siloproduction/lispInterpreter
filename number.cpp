@@ -12,7 +12,10 @@ Number::Number(double numberValue) {
 
 Number::~Number() {}
 
-void Number::print() const {
-    cout << "value = " << value << endl;
+ObjectType Number::getObjectType() const {
+    return objectType;
 }
 
+double Number::getValue() {
+    return value;
+}

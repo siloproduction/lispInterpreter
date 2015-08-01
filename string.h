@@ -5,15 +5,19 @@
 
 #include <iostream>
 
+using namespace std;
+
+
 class String: public Object {
     public:
         String(std::string stringValue);
         virtual ~String();
 
-        virtual void print() const;
+        virtual ObjectType getObjectType() const;
+        const string getValue();
 
     private:
-        std::string value;
+        string value;
         ObjectType objectType;
 };
 
