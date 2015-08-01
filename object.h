@@ -5,7 +5,8 @@ enum ObjectType {
     DOUBLET,
     NIL,
     NUMBER,
-    STRING
+    STRING,
+    SYMBOL
 };
 
 class Object {
