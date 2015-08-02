@@ -1,12 +1,12 @@
 #include "object.h"
-#include "string.h"
+#include "lispString.h"
 
 #include <iostream>
 
 using namespace std;
 
-String::String(string stringValue) {
-    value = stringValue;
+String::String(string value) {
+    this->value = value;
     objectType = STRING;
 }
 

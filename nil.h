@@ -5,32 +5,22 @@
 
 class Nil: public Object {
     public:
-        Nil();
-        virtual ~Nil();
+        Nil() {
+            value = 0;
+            objectType = NIL;
+        }
+        virtual ~Nil() {}
 
-        virtual ObjectType getObjectType() const;
-        int getValue();
+        virtual ObjectType getObjectType() const {
+            return objectType;
+        }
+        int getValue() {
+            return value;
+        }
 
     private:
         int value;
         ObjectType objectType;
 };
-
-Nil::Nil() {
-    value = 0;
-    objectType = NIL;
-}
-
-Nil::~Nil() {}
-
-ObjectType Nil::getObjectType() const {
-    return objectType;
-}
-
-int Nil::getValue() {
-    return value;
-}
-
-extern Nil nil;
 
 #endif // NIL_H

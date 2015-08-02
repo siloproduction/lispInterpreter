@@ -1,38 +1,35 @@
 #include "object.h"
 #include "doublet.h"
-#include "string.h"
-#include "number.h"
 #include "symbolsList.h"
 #include "nil.h"
-#include "main.cpp"
 
 #include <iostream>
 #include <vector>
 
-using namespace std;
 
+//Nil nil;
 
 Object * quote(Object * object) {
     if (object->getObjectType() == DOUBLET) {
         Doublet * doublet = dynamic_cast<Doublet *>(object);
         return doublet->getCar();
     }
-    return &nil;
+    return new Nil;
 }
 
 Object * cons(Object * object) {
     if (object->getObjectType() == NIL) {
-        Doublet doublet(&nil, &nil);
+        Doublet doublet(new Nil, new Nil);
         Object * res = &doublet;
         return res;
     }
     if (object->getObjectType() != DOUBLET) {
-        return &nil;
+        return new Nil;
     }
 
     Doublet * doubletInput = dynamic_cast<Doublet *>(object);
     if (doubletInput->getCdr()->getObjectType() == NIL) {
-        Doublet doubletOutput(doubletInput->getCar(), &nil);
+        Doublet doubletOutput(doubletInput->getCar(), new Nil);
         Object * res = &doubletOutput;
         return res;
     }
@@ -45,15 +42,15 @@ Object * cons(Object * object) {
 
 Object * set(Object * object) {
     if (object->getObjectType() != DOUBLET) {
-        return &nil;
+        return new Nil;
     }
 
     Doublet * doubletInput = dynamic_cast<Doublet *>(object);
     if (doubletInput->getCar()->getObjectType() != DOUBLET) {
-        return &nil;
+        return new Nil;
     }
 
-    Object * value = &nil;
+    Object * value = new Nil;
     if (doubletInput->getCdr()->getObjectType() != NIL) {
         Doublet * doubletCdr = dynamic_cast<Doublet *>(doubletInput->getCdr());
         value = doubletCdr->getCar();
@@ -65,26 +62,26 @@ Object * set(Object * object) {
 
 Object * car(Object * object) {
     if (object->getObjectType() != DOUBLET) {
-        return &nil;
+        return new Nil;
     }
 
     Doublet * doubletInput = dynamic_cast<Doublet *>(object);
     if (doubletInput->getCar()->getObjectType() != DOUBLET) {
-        return &nil;
+        return new Nil;
     }
 
-    Doublet doubletCar = Doublet(((*doubletInput).getCar()), &nil);
+    Doublet doubletCar = Doublet(((*doubletInput).getCar()), new Nil);
     return doubletCar.getCar();
 }
 
 Object * cdr(Object * object) {
     if (object->getObjectType() != DOUBLET) {
-        return &nil;
+        return new Nil;
     }
 
     Doublet * doubletInput = dynamic_cast<Doublet *>(object);
     if (doubletInput->getCar()->getObjectType() != DOUBLET) {
-        return &nil;
+        return new Nil;
     }
 
     return doubletInput->getCdr();
