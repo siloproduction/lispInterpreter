@@ -36,9 +36,9 @@ int readEvalPrintLoop() {
         finished = true;
         else if (input != "") {
             try {
-                cout << input << endl;
+                std::cout << input << endl;
             } catch (exception& e) {
-              cout << e.what() << endl;
+              std::cout << e.what() << endl;
             }
         }
     }
