@@ -5,7 +5,7 @@
 
 class Number: public Object {
     public:
-        Number(double numberValue);
+        Number(double number);
         virtual ~Number();
 
         virtual ObjectType getObjectType() const;

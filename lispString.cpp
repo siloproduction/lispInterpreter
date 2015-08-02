@@ -3,11 +3,9 @@
 
 #include <iostream>
 
-using namespace std;
-
 String::String(string value) {
     this->value = value;
-    objectType = STRING;
+    this->objectType = STRING;
 }
 
 String::~String() {}

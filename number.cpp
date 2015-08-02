@@ -3,9 +3,9 @@
 
 #include <iostream>
 
-Number::Number(double numberValue) {
-    value = numberValue;
-    objectType = NUMBER;
+Number::Number(double number) {
+    this->value = number;
+    this->objectType = NUMBER;
 }
 
 Number::~Number() {}

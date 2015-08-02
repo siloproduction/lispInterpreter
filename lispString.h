@@ -10,7 +10,7 @@ using namespace std;
 
 class String: public Object {
     public:
-        String(string stringValue);
+        String(string string);
         virtual ~String();
 
         virtual ObjectType getObjectType() const;

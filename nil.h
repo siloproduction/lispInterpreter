@@ -6,8 +6,8 @@
 class Nil: public Object {
     public:
         Nil() {
-            value = 0;
-            objectType = NIL;
+            this->value = 0;
+            this->objectType = NIL;
         }
         virtual ~Nil() {}
 

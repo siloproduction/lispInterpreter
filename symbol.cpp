@@ -1,10 +1,10 @@
 #include "symbol.h"
 #include "object.h"
 
-Symbol::Symbol(string nameValue, Object * objectValue) {
-    name = nameValue;
-    object = objectValue;
-    objectType = SYMBOL;
+Symbol::Symbol(string name, Object * object) {
+    this->name = name;
+    this->object = object;
+    this->objectType = SYMBOL;
 }
 
 Symbol::~Symbol(){}
