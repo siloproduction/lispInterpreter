@@ -1,4 +1,4 @@
-//#include "main.h"
+#include "main.h"
 #include "object.h"
 #include "lispString.h"
 #include "number.h"
@@ -6,36 +6,50 @@
 #include "nil.h"
 #include "doublet.h"
 #include "lispFunctions.h"
+#include "read.h"
 
 #include <iostream>
 #include <vector>
 
-//using namespace std;
 
-template<class TYPE>
-void print(TYPE data) {
-    cout << data << endl;
+int main(int argc, char * argv[]) {
+    if (argc == 1)
+        return readEvalPrintLoop();
+    if (argc == 2)
+        return execute(argv[1]);
+     else {
+        cout << "L'intepréteur doit être lancé soit sans argument pour démarrer l'interpréteur soit avec un seul argument qui sera le fichier à exécuter" << endl;
+        return 0;
+    }
 }
 
-//SymbolsList symbolsList;
-//Number number(5);
-//String myString("a string");
-//Nil nil;
+int readEvalPrintLoop() {
+    bool finished = false;
 
+    while (not finished) {
+        std::string input;
 
+        std::cout << "> ";
+        std::getline(std::cin, input);
 
-int main() {
-//    runTests();
-    cout << "Welcome" << endl;
-//    readEvalPrint();
+        if (input == "exit")
+        finished = true;
+        else if (input != "") {
+            try {
+                cout << input << endl;
+            } catch (exception& e) {
+              cout << e.what() << endl;
+            }
+        }
+    }
+
     return 0;
 }
 
-//void readEvalPrint() {
-//    while(true) {
+int execute(string fileName) {
 
-//    }
-//}
+    return 0;
+}
 
 
 
