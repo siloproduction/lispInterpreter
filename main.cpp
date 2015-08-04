@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include <vector>
+#include <sstream>
 
 
 int main(int argc, char * argv[]) {
@@ -33,9 +34,13 @@ int readEvalPrintLoop() {
         std::getline(std::cin, input);
 
         if (input == "exit")
-        finished = true;
+            finished = true;
         else if (input != "") {
             try {
+                std::stringstream stream(input);
+                Read * toRead = new Read(stream);
+                toRead->read();
+
                 std::cout << input << endl;
             } catch (exception& e) {
               std::cout << e.what() << endl;

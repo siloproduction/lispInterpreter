@@ -2,21 +2,21 @@
 #define SYMBOLSLIST_H
 
 #include "object.h"
+#include "symbol.h"
 
+#include <iostream>
 #include <vector>
-
-using namespace std;
-
 
 class SymbolsList {
     public:
         SymbolsList();
         ~SymbolsList();
 
-        void push(Object * object);
+        void push(Symbol * symbol);
+        Symbol * findSymbol(std::string symbolName);
 
     private:
-        vector<Object*> symbols;
+        std::vector<Symbol *> symbols;
 };
 
 extern SymbolsList symbolsList;

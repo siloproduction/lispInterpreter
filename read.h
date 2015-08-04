@@ -7,13 +7,18 @@
 
 class Read {
     public:
-        Read(std::string input);
+        Read(std::istream& input);
         ~Read();
 
-        Object * readListOrAtom(std::istream& input);
+        Object * read();
+        Object * readList(std::istream& stream, bool firstTime = true);
+        Object * readAtom(std::istream& stream);
+        static bool isNumber(const std::string&);
+        static bool isString(const std::string& string);
+        static std::string getWord(std::string string);
 
     private:
-        std::string input;
+        std::istream& stream;
 };
 
 #endif // READ_H

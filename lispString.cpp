@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-String::String(string value) {
+String::String(std::string value) {
     this->value = value;
     this->objectType = STRING;
 }
